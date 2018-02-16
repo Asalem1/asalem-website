@@ -1,18 +1,24 @@
 import React from 'react';
-import img from '../assets/images/react_logo_512x512.png';
+import Contact from './Contact';
+import CurrentProjects from './CurrentProjects';
+import Footer from './Footer';
+import PageHeader from './PageHeader/PageHeader';
+// import img from '../assets/images/bg.jpeg';
 
 const App = () => {
   return (
     <div>
-      <h2 id="heading">Hello ReactJS</h2>
-      <img
-        className="image"
-        style={{ margin: '0.5em' }}
-        height="40"
-        width="40"
-        src={img}
-        alt="React Logo"
-      />
+      <PageHeader />
+      <div className="col-md-12">
+        <CurrentProjects />
+      </div>
+      <br />
+      <div>
+        <Contact />
+      </div>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 };

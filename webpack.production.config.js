@@ -60,7 +60,7 @@ const config = {
         }),
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(jpeg|png|jpg|gif)$/,
         use: [
           {
             loader: 'url-loader',
