@@ -7,20 +7,26 @@
 
 .page-header {
   text-align: center;
-  padding: 10% 0px;
-  background-image: url('/images/bg.jpeg');
+  height: 400px;
+  background-image: url('images/bg.jpeg');
+  background-color: rgba(0, 0, 0, .5);
+  background-blend-mode: overlay;
   background-position: center;
   background-repeat: no-repeat;
   color: #fff;
 }
 
 .name-header {
-  font-size: calc(35px + 2vw);
+  font-size: 60px;
   letter-spacing: 1px;
+  position: relative;
+  top: 40%;
 }
 
 .description-header {
   font-size: calc(15px + 0.5vw);
   padding-top: 10px;
   padding-bottom: 7%;
+    position: relative;
+  top: 40%;
 }

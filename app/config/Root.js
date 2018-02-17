@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import $ from 'jquery';
-import Navigation from '../components/navbar';
+import Navbar from '../components/Navbar';
 import Blog from '../components/Blog';
 import App from '../components/App';
 
@@ -33,7 +33,7 @@ export default class Root extends Component {
     return (
       <Router>
         <div>
-          <Navigation />
+          <Navbar />
           <div>
             <Route exact path="/" component={App} />
             <Route

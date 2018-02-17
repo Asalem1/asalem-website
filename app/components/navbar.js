@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import { Tabs, Tab } from 'material-ui';
+import { Link } from 'react-router-dom';
+import * as styles from './Navbar.scss'; // eslint-disable-line
 // import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
+const btnStyle = {
+  display: 'inline-block',
+  textAlign: 'center',
+  padding: '20px 0',
+  minWidth: '100%',
+  height: '100%',
+};
 
-export default class Navigation extends Component {
+export class NavbarClass extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -20,10 +29,51 @@ export default class Navigation extends Component {
 
   render() {
     return (
-      <span />
+      <Tabs
+        className="navbar-tabs"
+      >
+        <Tab
+          className="nav-item"
+          buttonStyle={btnStyle}
+          label={
+            <Link className="nav-link" to="/about">
+              ABOUT
+            </Link>
+          }
+        />
+        <Tab
+          className="nav-item"
+          buttonStyle={btnStyle}
+          label={
+            <a className="nav-link" href="/#portfolio">
+              PORTFOLIO
+            </a>
+          }
+        />
+        <Tab
+          className="nav-item"
+          buttonStyle={btnStyle}
+          label={
+            <Link className="nav-link" to="/blog">
+              BLOG
+            </Link>
+          }
+        />
+        <Tab
+          className="nav-item"
+          buttonStyle={btnStyle}
+          label={
+            <a className="nav-link" href="/#contact">
+              CONTACT
+            </a>
+          }
+        />
+      </Tabs>
     );
   }
 }
+
+export default NavbarClass;
 /*
 <nav className="navbar navbar-toggleable-md navbar-light bg-faded navMaster">
   <Dropdown
