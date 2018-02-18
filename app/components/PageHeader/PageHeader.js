@@ -7,8 +7,9 @@ export function PageHeaderClass() {
       <div className="name-header">
         Hi, I&apos;m Ariel Salem
       </div>
+      <hr />
       <div className="description-header">
-        FULL STACK DEVELOPER & UI/UX DESIGNER
+        Full Stack Developer & UI/UX Designer
       </div>
     </div>
   );

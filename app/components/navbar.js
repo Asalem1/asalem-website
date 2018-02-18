@@ -7,8 +7,8 @@ import * as styles from './Navbar.scss'; // eslint-disable-line
 const btnStyle = {
   display: 'inline-block',
   textAlign: 'center',
-  padding: '20px 0',
-  minWidth: '100%',
+  // padding: '20px 0',
+  width: '100%',
   height: '100%',
 };
 
@@ -29,46 +29,68 @@ export class NavbarClass extends Component {
 
   render() {
     return (
-      <Tabs
-        className="navbar-tabs"
-      >
-        <Tab
-          className="nav-item"
-          buttonStyle={btnStyle}
-          label={
-            <Link className="nav-link" to="/about">
-              ABOUT
-            </Link>
-          }
-        />
-        <Tab
-          className="nav-item"
-          buttonStyle={btnStyle}
-          label={
-            <a className="nav-link" href="/#portfolio">
-              PORTFOLIO
-            </a>
-          }
-        />
-        <Tab
-          className="nav-item"
-          buttonStyle={btnStyle}
-          label={
-            <Link className="nav-link" to="/blog">
-              BLOG
-            </Link>
-          }
-        />
-        <Tab
-          className="nav-item"
-          buttonStyle={btnStyle}
-          label={
-            <a className="nav-link" href="/#contact">
-              CONTACT
-            </a>
-          }
-        />
-      </Tabs>
+      <div>
+        <div className="hidden-xs hidden-sm">
+          <Tabs
+            className="navbar-tabs"
+          >
+            <Tab
+              className="nav-tab"
+              buttonStyle={btnStyle}
+              label={
+                <Link className="nav-item" to="/">
+                  AS ARIEL SALEM
+                </Link>
+              }
+            />
+            <Tab
+              className="nav-tab"
+              buttonStyle={btnStyle}
+              label={
+                <a className="nav-item" href="/#about">
+                  ABOUT
+                </a>
+              }
+            />
+            <Tab
+              className="nav-tab"
+              buttonStyle={btnStyle}
+              label={
+                <a className="nav-item" href="/#portfolio">
+                  PORTFOLIO
+                </a>
+              }
+            />
+            <Tab
+              className="nav-tab"
+              buttonStyle={btnStyle}
+              label={
+                <a className="nav-item" href="/#testimonials">
+                  TESTIMONIALS
+                </a>
+              }
+            />
+            <Tab
+              className="nav-tab"
+              buttonStyle={btnStyle}
+              label={
+                <Link className="nav-item" to="/blog">
+                  BLOG
+                </Link>
+              }
+            />
+            <Tab
+              className="nav-item"
+              buttonStyle={btnStyle}
+              label={
+                <a className="nav-item" href="/#contact">
+                  CONTACT
+                </a>
+              }
+            />
+          </Tabs>
+        </div>
+      </div>
     );
   }
 }

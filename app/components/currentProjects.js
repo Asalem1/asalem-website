@@ -1,8 +1,90 @@
 import React from 'react';
+import { GridList, GridTile } from 'material-ui';
+import * as images from './images/index';
+import * as cpStyles from './CurrentProjects.scss'; // eslint-disable-line
+
+const styles = {
+  gridList: {
+    minHeight: '100%',
+    overflowY: 'auto',
+    margin: '0 100px',
+  },
+  tileStyle: {
+    fontFamily: 'Quicksand',
+    fontSize: '25px',
+  },
+};
+
+const tilesData = [
+  {
+    img: images.plantr,
+    alt: 'Plantr Preview',
+    href: 'https://organico-plantr.herokuapp.com',
+    title: 'Plantr',
+    role: 'Scrum Master',
+  },
+  {
+    img: images.stackets,
+    alt: 'Stackets Preview',
+    href: 'https://stackets-orion.herokuapp.com',
+    title: 'Stackets',
+    role: 'Product Owner',
+  },
+  {
+    img: images.thymer,
+    alt: 'Thymer Preview',
+    href: 'https://organico-plantr.herokuapp.com',
+    title: 'Thymer',
+    role: 'Software Engineer',
+  },
+];
 
 export function CurrentProjectsClass() {
   return (
-    <div id="portfolio" className="project-info">
+    <div
+      className="gridlist-container"
+      id="portfolio"
+    >
+      <div className="project-header">Projects</div>
+      <GridList
+        cols={3}
+        cellHeight={350}
+        padding={4}
+        style={styles.gridList}
+      >
+        {
+          tilesData.map(tile => (
+            <a
+              key={tile.img}
+              target="_blank"
+              href={tile.href}
+              rel="noopener noreferrer"
+            >
+              <GridTile
+                title={tile.title}
+                subtitle={<span><b>ROLE: </b>{tile.role}</span>}
+                cols={1}
+                rows={1}
+                tileStyle={styles.tileStyle}
+              >
+                <img
+                  className="img-style"
+                  alt={tile.alt}
+                  src={tile.img}
+                />
+              </GridTile>
+            </a>
+          ))
+        }
+      </GridList>
+    </div>
+  );
+}
+
+export default CurrentProjectsClass;
+
+/*
+<div id="portfolio" className="project-info">
       <div className="row">
         <div className="col-md-3 offset-md-1 col-sm-11 project-body">
           <div className="row">
@@ -108,7 +190,4 @@ export function CurrentProjectsClass() {
         </div>
       </div>
     </div>
-  );
-}
-
-export default CurrentProjectsClass;
+*/

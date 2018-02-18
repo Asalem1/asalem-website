@@ -12,8 +12,10 @@ export function BlogClass({ blogs }) {
     <div>
       <div className="blog">
         <header>
-          <p className="blog-header">Ariel Salem</p>
-          <p className="blog-description"> Lover of Tech, Programming, and all things JavaScript </p>
+          <div className="blog-header">
+            Ariel Salem
+          </div>
+          <div className="blog-description"> Lover of Tech, Programming, and all things JavaScript </div>
         </header>
         <hr />
       </div>

@@ -1,20 +1,20 @@
 import React from 'react';
 
-export function AboutClass() {
+export function TestimonialsClass() {
   return (
-    <div id="about" className="container about-container">
-      <div className="about-info">
+    <div id="testimonials" className="container testimonials-container">
+      <div className="testimonials-info">
         <div className="row">
           <div className="col-sm-4 line-decoration" />
           <div className="col-sm-4">
-            <div className="about-divide">
-              About Me
+            <div className="testimonials-divide">
+              Testimonials
             </div>
           </div>
           <div className="col-sm-4 line-decoration" />
         </div>
         <div className="row">
-          <div className="about-description">
+          <div className="testimonials-description">
             Ariel is a full-stack engineer with a strong background&nbsp;
             in JavaScript (ES6) that is passionate about design, development&nbsp;
             and building innovative products and systems that empower individuals&nbsp;
@@ -28,4 +28,4 @@ export function AboutClass() {
   );
 }
 
-export default AboutClass;
+export default TestimonialsClass;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { RaisedButton, TextField } from 'material-ui';
 
 export default class Contact extends Component {
   constructor(props) {
@@ -15,42 +16,29 @@ export default class Contact extends Component {
     }
   }
 
-  checkInputs = (event) => {
-    event.preventDefault();
-    const name = this.name.value;
-    const email = this.email.value;
-    const message = this.message.value;
-    if (!name.length || !email.length || !message.length) {
-      this.setState({ success: false });
-    } else {
-      this.sendEmail(name, email, message);
-      this.name.value = '';
-      this.email.value = '';
-      this.message.value = '';
-    }
-  }
-
-  sendEmail = (name, email, message) => {
-    fetch('/send', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        message,
-      }),
-    })
-      .then(res => res.json())
-      .then(() => {
-        this.setState({ success: true });
-      })
-      .catch((err) => {
-        this.setState({ success: false });
-        throw Error(err);
-      });
+  sendEmail = (e) => {
+    e.preventDefault();
+    console.log('e is: ', e);
+    // fetch('/send', {
+    //   method: 'POST',
+    //   headers: {
+    //     Accept: 'application/json',
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     // name,
+    //     // email,
+    //     // message,
+    //   }),
+    // })
+    //   .then(res => res.json())
+    //   .then(() => {
+    //     this.setState({ success: true });
+    //   })
+    //   .catch((err) => {
+    //     this.setState({ success: false });
+    //     throw Error(err);
+    //   });
   }
 
   renderSuccessMessage() {
@@ -72,47 +60,46 @@ export default class Contact extends Component {
 
   render() {
     return (
-      <div id="contact" className="contact">
-        <section>
-          <header>
-            <p className="contact-header">Reach Out</p>
-          </header>
-          <hr />
-          <form onSubmit={() => this.checkInputs} className="form-styling">
-            <div>
-              <div className="row">
-                <div className="col-sm-5">
-                  <label className="contact-label" htmlFor="name">
-                    Name&nbsp;
-                    <input className="contact-container" type="text" name="name" ref={(c) => { this.name = c; }} />
-                  </label>
-                </div>
-                <div className="col-sm-5 offset-sm-1">
-                  <label className="contact-label" htmlFor="email">
-                    Email&nbsp;
-                    <input className="contact-container" type="text" name="email" ref={(c) => { this.email = c; }} />
-                  </label>
-                </div>
-              </div>
-              <br />
-              <div className="row">
-                <div className="col-sm-5">
-                  <label className="contact-label" htmlFor="message">
-                    Message&nbsp;
-                    <textarea className="contact-container col-sm-12" name="message" rows="10" ref={(c) => { this.message = c; }} />
-                  </label>
-                </div>
-                <div className="row send-message">
-                  <button type="submit" className="send-message-button"> Send Message </button>
-                </div>
-              </div>
-              <br />
+      <div id="contact" className="container">
+        <div className="contact-divide">
+          Reach Out
+        </div>
+        <form
+          onSubmit={() => this.sendEmail}
+        >
+          <div className="row">
+            <div className="col-sm-6">
+              <TextField
+                floatingLabelText="Name"
+                required
+                rows={4}
+                multiLine
+                fullWidth
+              />
             </div>
-          </form>
-          <div>
-            {this.renderSuccessMessage()}
+            <div className="col-sm-6">
+              <TextField
+                floatingLabelText="Email"
+                required
+                rows={4}
+                multiLine
+                fullWidth
+              />
+            </div>
           </div>
-        </section>
+          <TextField
+            floatingLabelText="Message"
+            required
+            rows={4}
+            multiLine
+            fullWidth
+          />
+          <RaisedButton
+            label="Send Message"
+            type="Submit"
+            primary
+          />
+        </form>
       </div>
     );
   }
