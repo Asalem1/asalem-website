@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   position: relative;
+  margin: 0 10px;
 }
 
 .project-header {
@@ -15,5 +16,12 @@
 
 .img-style {
 	height: 100% !important;
+  // min-width: 100%;
+}
+
+.project-info {
+  letter-spacing: 1px;
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 14px;
 }
 

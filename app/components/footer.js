@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './Footer.scss'; // eslint-disable-line
+import './Footer.scss';
 
 const currentDate = new Date().getFullYear();
 

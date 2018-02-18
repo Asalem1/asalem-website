@@ -55,7 +55,7 @@ export default class BlogListEntry extends Component {
             {this.state.title}
           </div>
           <div className="blog-summary">
-              {this.state.summary}
+            {this.state.summary}
           </div>
         </a>
       </div>

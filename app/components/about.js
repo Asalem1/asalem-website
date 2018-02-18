@@ -4,14 +4,8 @@ export function AboutClass() {
   return (
     <div id="about" className="container about-container">
       <div className="about-info">
-        <div className="row">
-          <div className="col-sm-4 line-decoration" />
-          <div className="col-sm-4">
-            <div className="about-divide">
-              About Me
-            </div>
-          </div>
-          <div className="col-sm-4 line-decoration" />
+        <div className="about-divide">
+          About Me
         </div>
         <div className="row">
           <div className="about-description">

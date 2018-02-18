@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './PageHeader.scss'; // eslint-disable-line
+import './PageHeader.scss';
 
 export function PageHeaderClass() {
   return (

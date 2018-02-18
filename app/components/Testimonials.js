@@ -1,27 +1,73 @@
 import React from 'react';
+import { Avatar, List, ListItem } from 'material-ui';
+import * as images from './images/index';
 
 export function TestimonialsClass() {
   return (
-    <div id="testimonials" className="container testimonials-container">
-      <div className="testimonials-info">
-        <div className="row">
-          <div className="col-sm-4 line-decoration" />
-          <div className="col-sm-4">
-            <div className="testimonials-divide">
-              Testimonials
-            </div>
-          </div>
-          <div className="col-sm-4 line-decoration" />
+    <div id="testimonials" className="container">
+      <div>
+        <div className="testimonials-divide">
+          Testimonials
         </div>
-        <div className="row">
-          <div className="testimonials-description">
-            Ariel is a full-stack engineer with a strong background&nbsp;
-            in JavaScript (ES6) that is passionate about design, development&nbsp;
-            and building innovative products and systems that empower individuals&nbsp;
-            and companies to succeed. He loves working autonomously and in groups&nbsp;
-            to take on challenges and solve problems that require cutting-edge&nbsp;
-            technology and creativity.
-          </div>
+      </div>
+      <div className="row">
+        <div className="testimonials">
+          <List>
+            <ListItem
+              leftAvatar={<Avatar src={images.pamela} />}
+              primaryText={
+                <div className="founder-name">
+                  Pamela Sandler
+                </div>
+              }
+              secondaryText={
+                <p className="testimonials-description">
+                  <span className="founder">
+                    Founder of&nbsp;
+                    <a
+                      href="https://www.nourishroots.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="link"
+                    >
+                      Nourish Roots
+                    </a>
+                  </span>
+                  &nbsp;--&nbsp;Ariel&apos;s talent, creativity and dedication are extremely
+                  impressive. He listened attentively to exactly what I wanted and recreated
+                  a vision that positively exceeded my expectations above and beyond. Highly recommend!
+                </p>
+              }
+              secondaryTextLines={2}
+            />
+            <ListItem
+              leftAvatar={<Avatar src={images.nux} />}
+              primaryText={
+                <div className="founder-name">
+                  Marissa Nuckels
+                </div>
+              }
+              secondaryText={
+                <p className="testimonials-description">
+                  <span className="founder">
+                    Founder of&nbsp;
+                    <a
+                      href="http://www.thehomestead.life/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="link"
+                    >
+                      The Homestead
+                    </a>
+                  </span>
+                  &nbsp;--&nbsp;Ariel was able to build mean entire website within a week,
+                  while other programmers were giving me estimates of a month. He works with
+                  passion, and gives it his all. I&apos;m happy with all the work he accomplished.
+                </p>
+              }
+              secondaryTextLines={2}
+            />
+          </List>
         </div>
       </div>
     </div>

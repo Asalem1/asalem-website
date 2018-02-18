@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
 import { RaisedButton, TextField } from 'material-ui';
 
+const labelStyle = {
+  top: '7px',
+  fontFamily: 'Roboto Slab',
+  fontWeight: 800,
+};
+
+const inputStyle = {
+  fontFamily: 'Roboto Slab',
+  fontWeight: 800,
+  bottom: '30px',
+};
+
 export default class Contact extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +23,6 @@ export default class Contact extends Component {
 
   sendEmail = (e) => {
     e.preventDefault();
-    console.log('e is: ', e);
     // fetch('/send', {
     //   method: 'POST',
     //   headers: {
@@ -63,34 +74,43 @@ export default class Contact extends Component {
           <div className="row">
             <div className="col-sm-6">
               <TextField
+                inputStyle={inputStyle}
                 floatingLabelText="Name"
+                floatingLabelStyle={labelStyle}
+                type="text"
                 required
-                rows={4}
-                multiLine
                 fullWidth
               />
             </div>
             <div className="col-sm-6">
               <TextField
+                inputStyle={inputStyle}
+                floatingLabelStyle={labelStyle}
+                type="text"
                 floatingLabelText="Email"
                 required
-                rows={4}
-                multiLine
                 fullWidth
               />
             </div>
           </div>
           <TextField
             floatingLabelText="Message"
+            textareaStyle={inputStyle}
+            floatingLabelStyle={labelStyle}
             required
-            rows={4}
             multiLine
+            rowsMax={4}
             fullWidth
           />
           <RaisedButton
             label="Send Message"
             type="Submit"
             primary
+            labelStyle={{
+              fontFamily: 'Roboto Slab',
+              fontWeight: 800,
+              letterSpacing: '1.5px',
+            }}
             style={{ marginBottom: '40px' }}
           />
         </form>

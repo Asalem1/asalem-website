@@ -15,7 +15,6 @@ body {
   padding: 30px;
 }
 
-.testimonials-description,
 .about-description {
   margin: 0 100px;
   text-align: center;
@@ -25,10 +24,50 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
-.testimonials-description {
-  margin-bottom: 40px;
+.testimonials-divide {
+  padding-bottom: 20px;
 }
 
 .contact {
   background-color: #f7f7f7;
+}
+
+.testimonials {
+  width: 100%;
+}
+
+.founder,
+.link {
+  text-decoration: none;
+  color: #000;
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 800;
+  letter-spacing: .5px;
+  font-size: 15px;
+
+  &:hover {
+    text-decoration: none;
+    color: #000;
+  }
+}
+
+.link {
+  color: #00bcd2;
+
+  &:hover {
+    color: #00bcd2
+  }
+}
+
+.founder-name {
+  font-weight: 800;
+  font-family: 'Raleway', serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.testimonials-description {
+  font-family: 'Nunito', serif;
+  letter-spacing: 1px;
+  font-weight: 800;
 }
