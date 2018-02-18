@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import $ from 'jquery';
 import Navbar from '../components/Navbar';
-import Blog from '../components/Blog';
+import Blog from '../components/Blog/Blog';
 import App from '../components/App';
+import Footer from '../components/Footer';
 
 export default class Root extends Component {
   constructor(props) {
@@ -43,6 +44,7 @@ export default class Root extends Component {
               )}
             />
           </div>
+          <Footer />
         </div>
       </Router>
     );

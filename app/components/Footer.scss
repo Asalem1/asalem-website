@@ -1,0 +1,25 @@
+.footer {
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+}
+
+.a-icons {
+	color: #fff;
+	margin: 0 10px;
+	font-size: 20px; 
+	&:hover {
+		color: #00bcd2
+	}
+}
+
+.footer-icons {
+	padding-top: 30px;
+}
+
+.footer-copyright {
+	padding: 20px 0 30px;
+	font-size: 22px;
+	letter-spacing: 1px;
+	font-family: 'Quicksand', serif;
+}

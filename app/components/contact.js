@@ -9,13 +9,6 @@ export default class Contact extends Component {
     };
   }
 
-  componentDidUpdate() {
-    if (this.state.success === false || this.state.success === true) {
-      const context = this;
-      setTimeout(() => context.setState({ success: '' }), 7000);
-    }
-  }
-
   sendEmail = (e) => {
     e.preventDefault();
     console.log('e is: ', e);
@@ -98,6 +91,7 @@ export default class Contact extends Component {
             label="Send Message"
             type="Submit"
             primary
+            style={{ marginBottom: '40px' }}
           />
         </form>
       </div>

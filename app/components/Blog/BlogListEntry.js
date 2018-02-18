@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
+import * as styles from './Blog.scss'; // eslint-disable-line
 
 export default class BlogListEntry extends Component {
   static propTypes = {
@@ -37,7 +38,7 @@ export default class BlogListEntry extends Component {
 
   renderSummary() {
     const summary = $(this.props.description).text();
-    const newSummary = `${summary.substring(0, 751)} ...`;
+    const newSummary = `${summary.substring(0, 551)} ...`;
     this.setState({ summary: newSummary });
   }
 
@@ -45,14 +46,18 @@ export default class BlogListEntry extends Component {
     const { link } = this.props;
     return (
       <div className="blog-list-entry">
-        <div className="blog-title">
-          <p>{this.state.title}</p>
-        </div>
-        <div className="blog-summary">
-          <a target="_blank" href={link} className="blog-link">
-            <p>{this.state.summary}</p>
-          </a>
-        </div>
+        <a
+          target="_blank"
+          href={link}
+          className="blog-link"
+        >
+          <div className="blog-title">
+            {this.state.title}
+          </div>
+          <div className="blog-summary">
+              {this.state.summary}
+          </div>
+        </a>
       </div>
     );
   }

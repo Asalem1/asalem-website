@@ -1,0 +1,72 @@
+.blog {
+	text-align: center;
+  height: 500px;
+  background-image: url('images/blog-bg.jpeg');
+  background-color: rgba(0, 0, 0, .5);
+  background-blend-mode: overlay;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  position: relative;
+}
+
+.blog-header {
+  font-size: 60px;
+  letter-spacing: 1px;
+  position: relative;
+  margin-top: 17%;
+  display: inline-block;
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+.blog-description {
+  font-size: 25px;
+  letter-spacing: 2px;
+  padding-top: 10px;
+  padding-bottom: 7%;
+  position: relative;
+  top: 40%;
+  font-family: 'Pacifico', cursive;
+}
+
+.blog-list {
+	column-count: 3;
+}
+
+.blog-list-item {
+	margin: 15px 0;
+	display: inline-block;
+	background-color: #f7f7f7;
+	// transform: scaleY(0);
+  transform-origin: top;
+
+	&:hover {
+		transition: 1500ms;
+		background-color: #c9f7fc;
+		// transform: scaleY(1);
+	}
+}
+
+.blog-link {
+	color: #000;
+	text-decoration: none;
+
+	&:hover {
+		color: #000;
+		text-decoration: none;
+	}
+}
+
+.blog-title {
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  margin: 10px;
+}
+
+.blog-summary {
+	margin: 10px;
+	font-family: 'Roboto Slab', sans-serif;
+}

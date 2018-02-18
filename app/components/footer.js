@@ -1,9 +1,11 @@
 import React from 'react';
+import * as styles from './Footer.scss'; // eslint-disable-line
+
+const currentDate = new Date().getFullYear();
 
 export function FooterClass() {
   return (
     <div className="footer">
-      <hr />
       <div className="footer-icons">
         <a
           target="_blank"
@@ -11,7 +13,7 @@ export function FooterClass() {
           rel="noopener noreferrer"
           href="https://www.linkedin.com/in/ariel-salem/"
         >
-          <i className="fa fa-linkedin" aria-hidden="true" />
+          <i className="fab fa-linkedin" aria-hidden="true" />
         </a>
         <a
           target="_blank"
@@ -19,13 +21,10 @@ export function FooterClass() {
           className="a-icons"
           href="https://github.com/Asalem1"
         >
-          <i className="fa fa-github" aria-hidden="true" />
+          <i className="fab fa-github" aria-hidden="true" />
         </a>
       </div>
-      <br />
-      <div className="footer-copyright">© Ariel Salem </div>
-      <br />
-      <br />
+      <div className="footer-copyright">© Ariel Salem {currentDate}</div>
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import Contact from './Contact';
 import CurrentProjects from './CurrentProjects';
-import Footer from './Footer';
 import PageHeader from './PageHeader/PageHeader';
 import About from './About';
 import Testimonials from './Testimonials';
@@ -20,11 +19,8 @@ const App = () => {
       <div>
         <Testimonials />
       </div>
-      <div>
+      <div className="contact">
         <Contact />
-      </div>
-      <div>
-        <Footer />
       </div>
     </div>
   );
