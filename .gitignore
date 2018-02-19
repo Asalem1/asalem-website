@@ -57,9 +57,7 @@ npm-debug.log
 .vscode
 
 # coverage
-client_secret.json
 oauth.js
-bundle.js
 dist
 
 /coverage

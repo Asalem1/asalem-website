@@ -4,7 +4,8 @@
   "description": "Minimalistic ES6 React boilerplate",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "dev": "webpack-dev-server",
+    "start": "nodemon server.js",
     "clean": "rimraf dist",
     "production": "webpack --config webpack.production.config.js --progress --profile --colors",
     "build": "set NODE_ENV=production webpack --config webpack.production.config.js --progress --colors -p",
