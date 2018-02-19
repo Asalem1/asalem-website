@@ -6,7 +6,9 @@
   "scripts": {
     "start": "webpack-dev-server",
     "clean": "rimraf dist",
-    "production": "cross-env npm run clean && webpack --config webpack.production.config.js --progress --profile --colors",
+    "production": "webpack --config webpack.production.config.js --progress --profile --colors",
+    "build": "set NODE_ENV=production webpack --config webpack.production.config.js --progress --colors -p",
+    "build:watch": "webpack --progress --colors --watch",
     "lint": "eslint ./app/**/**.js",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -36,10 +38,14 @@
     }
   },
   "dependencies": {
+    "body-parser": "^1.18.2",
     "bootstrap": "^4.0.0",
     "cross-env": "5.1.2",
+    "express": "^4.16.2",
     "jquery": "^3.3.1",
+    "mailgun-js": "^0.16.0",
     "material-ui": "^0.20.0",
+    "nodemon": "^1.15.0",
     "prop-types": "^15.6.0",
     "react": "16.2.0",
     "react-dom": "16.2.0",

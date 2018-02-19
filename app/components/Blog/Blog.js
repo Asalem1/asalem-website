@@ -1,32 +1,50 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import $ from 'jquery';
 import BlogList from './BlogList';
-import * as styles from './Blog.scss'; // eslint-disable-line
+import './Blog.scss';
 
-const propTypes = {
-  blogs: PropTypes.arrayOf(PropTypes.shape).isRequired,
-};
+export class BlogClass extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      blogs: [],
+    };
+  }
 
-export function BlogClass({ blogs }) {
-  return (
-    <div>
-      <div className="blog">
-        <header>
-          <div className="blog-header">
-            Ariel Salem
-          </div>
-          <hr />
-          <div className="blog-description"> Lover of Tech, Programming, and all things JavaScript </div>
-        </header>
-      </div>
-      <br />
+  componentWillMount() {
+    this.getBlogs();
+  }
+
+  getBlogs() {
+    const data = {
+      rss_url: 'https://medium.com/feed/@ariel.salem1989',
+    };
+    $.get('https://api.rss2json.com/v1/api.json', data, (res) => {
+      if (res.status === 'ok') {
+        this.setState({ blogs: res.items });
+      }
+    });
+  }
+  render() {
+    const { blogs } = this.state;
+    return (
       <div>
-        <BlogList blogs={blogs} />
+        <div className="blog">
+          <header>
+            <div className="blog-header">
+              Ariel Salem
+            </div>
+            <hr />
+            <div className="blog-description"> Lover of Tech, Programming, and all things JavaScript </div>
+          </header>
+        </div>
+        <br />
+        <div>
+          <BlogList blogs={blogs} />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
-
-BlogClass.propTypes = propTypes;
 
 export default BlogClass;

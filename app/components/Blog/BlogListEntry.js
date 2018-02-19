@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
-import * as styles from './Blog.scss'; // eslint-disable-line
+import './Blog.scss';
 
 export default class BlogListEntry extends Component {
   static propTypes = {

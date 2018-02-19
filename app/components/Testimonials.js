@@ -34,8 +34,9 @@ export function TestimonialsClass() {
                     </a>
                   </span>
                   &nbsp;--&nbsp;Ariel&apos;s talent, creativity and dedication are extremely
-                  impressive. He listened attentively to exactly what I wanted and recreated
-                  a vision that positively exceeded my expectations above and beyond. Highly recommend!
+                  impressive. He listened attentively to exactly what I wanted
+                  and recreated a vision that positively exceeded my
+                  expectations above and beyond. Highly recommend!
                 </p>
               }
               secondaryTextLines={2}

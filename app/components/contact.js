@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { RaisedButton, TextField } from 'material-ui';
 
 const labelStyle = {
@@ -14,53 +15,64 @@ const inputStyle = {
 };
 
 export default class Contact extends Component {
+  static propTypes = {
+    toggleDialog: PropTypes.func.isRequired,
+  };
+
   constructor(props) {
     super(props);
     this.state = {
-      success: '',
+      name: '',
+      email: '',
+      message: '',
     };
   }
 
-  sendEmail = (e) => {
-    e.preventDefault();
-    // fetch('/send', {
-    //   method: 'POST',
-    //   headers: {
-    //     Accept: 'application/json',
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     // name,
-    //     // email,
-    //     // message,
-    //   }),
-    // })
-    //   .then(res => res.json())
-    //   .then(() => {
-    //     this.setState({ success: true });
-    //   })
-    //   .catch((err) => {
-    //     this.setState({ success: false });
-    //     throw Error(err);
-    //   });
+  sendEmail = (event) => {
+    event.preventDefault();
+    const { toggleDialog } = this.props;
+    const { name, email, message } = this.state;
+    fetch('/send', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        message,
+      }),
+    })
+      .then(res => res.json())
+      .then(() => {
+        this.setState({
+          name: '',
+          email: '',
+          message: '',
+        });
+        toggleDialog(true);
+      })
+      .catch((err) => {
+        toggleDialog(false);
+        throw Error(err);
+      });
   }
 
-  renderSuccessMessage() {
-    if (this.state.success === true) {
-      return (
-        <div>
-          <p>Your email was sent successfully. </p>
-        </div>
-      );
-    } else if (this.state.success === false) {
-      return (
-        <div>
-          <p>Please make sure to fill-in all the input fields. </p>
-        </div>
-      );
-    }
-    return <br />;
-  }
+  handleName = (e, v) => {
+    e.preventDefault();
+    this.setState({ name: v });
+  };
+
+  handleEmail = (e, v) => {
+    e.preventDefault();
+    this.setState({ email: v });
+  };
+
+  handleMessage = (e, v) => {
+    e.preventDefault();
+    this.setState({ message: v });
+  };
 
   render() {
     return (
@@ -69,7 +81,7 @@ export default class Contact extends Component {
           Reach Out
         </div>
         <form
-          onSubmit={() => this.sendEmail}
+          onSubmit={this.sendEmail}
         >
           <div className="row">
             <div className="col-sm-6">
@@ -80,6 +92,8 @@ export default class Contact extends Component {
                 type="text"
                 required
                 fullWidth
+                value={this.state.name}
+                onChange={this.handleName}
               />
             </div>
             <div className="col-sm-6">
@@ -90,6 +104,8 @@ export default class Contact extends Component {
                 floatingLabelText="Email"
                 required
                 fullWidth
+                value={this.state.email}
+                onChange={this.handleEmail}
               />
             </div>
           </div>
@@ -101,6 +117,8 @@ export default class Contact extends Component {
             multiLine
             rowsMax={4}
             fullWidth
+            value={this.state.message}
+            onChange={this.handleMessage}
           />
           <RaisedButton
             label="Send Message"

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { GridList, GridTile, IconButton } from 'material-ui';
+import { GridList, GridTile } from 'material-ui';
 import $ from 'jquery';
 import * as images from './images/index';
 import './CurrentProjects.scss';
@@ -46,6 +46,10 @@ const tilesData = [
   },
 ];
 
+$(() => {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+
 export class CurrentProjectsClass extends Component {
   renderColumnSize = () => {
     if (window.outerWidth < 767) {
@@ -76,7 +80,7 @@ export class CurrentProjectsClass extends Component {
         <div className="project-header">Projects</div>
         <GridList
           cols={$(window).on('resize', () => {
-            this.renderColumnSize()
+            this.renderColumnSize();
           })}
           cellHeight={this.renderCellHeight()}
           padding={4}
@@ -101,6 +105,9 @@ export class CurrentProjectsClass extends Component {
                   tileStyle={styles.tileStyle}
                 >
                   <img
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title={`Check out ${tile.title} by clicking here`}
                     className="img-style"
                     alt={tile.alt}
                     src={tile.img}

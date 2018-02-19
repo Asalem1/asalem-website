@@ -2,7 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import PropTypes from 'prop-types';
 import BlogListEntry from './BlogListEntry';
-import * as styles from './Blog.scss'; // eslint-disable-line
+import './Blog.scss';
 
 const propTypes = {
   blogs: PropTypes.arrayOf(PropTypes.shape).isRequired,

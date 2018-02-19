@@ -17,6 +17,12 @@
 .img-style {
 	height: 100% !important;
   // min-width: 100%;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, .2);
+    transition: 1000ms;
+    background-blend-mode: overlay;
+  }
 }
 
 .project-info {
