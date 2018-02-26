@@ -20,10 +20,12 @@ const btnStyle = {
 };
 
 const menuItemStyle = {
-  fontSize: '20px',
+  fontSize: '50px',
   letterSpacing: '1px',
   fontFamily: 'Quicksand',
   cursor: 'pointer',
+  height: '100px',
+  lineHeight: '100px',
 };
 
 export class NavbarClass extends Component {
@@ -37,6 +39,11 @@ export class NavbarClass extends Component {
       iconButtonElement={
         <IconButton><Menu /></IconButton>
       }
+      iconStyle={{
+        width: 65,
+        height: 65,
+        marginLeft: -40,
+      }}
       targetOrigin={{ horizontal: 'right', vertical: 'top' }}
       anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
     >

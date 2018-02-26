@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { GridList, GridTile } from 'material-ui';
-import $ from 'jquery';
+import { GridList, GridTile, IconButton } from 'material-ui';
 import * as images from './images/index';
 import './CurrentProjects.scss';
 
 const styles = {
   gridList: {
+    minWidth: '100%',
     minHeight: '100%',
     overflowY: 'auto',
   },
@@ -44,33 +44,16 @@ const tilesData = [
     title: 'Thymer',
     role: 'Software Engineer',
   },
+  {
+    img: images.coverflow,
+    alt: 'React Coverflow',
+    href: 'http://andyyou.github.io/react-coverflow/',
+    title: 'React Coverflow',
+    role: 'Maintainer / Contributor',
+  },
 ];
 
-$(() => {
-  $('[data-toggle="tooltip"]').tooltip();
-});
-
-export class CurrentProjectsClass extends Component {
-  renderColumnSize = () => {
-    if (window.outerWidth < 767) {
-      return 1;
-    } else if (window.outerWidth < 991) {
-      return 2;
-    } else if (window.outerWidth < 1221) {
-      return 3;
-    }
-    return 4;
-  }
-
-  renderCellHeight = () => {
-    if (window.outerWidth < 767) {
-      return 500;
-    } else if (window.outerWidth < 1221) {
-      return 391;
-    }
-    return 350;
-  }
-
+export class CurrentProjectsClass extends Component { // eslint-disable-line
   render() {
     return (
       <div
@@ -79,43 +62,64 @@ export class CurrentProjectsClass extends Component {
       >
         <div className="project-header">Projects</div>
         <GridList
-          cols={$(window).on('resize', () => {
-            this.renderColumnSize();
-          })}
-          cellHeight={this.renderCellHeight()}
-          padding={4}
+          cols={1}
+          cellHeight="auto"
           style={styles.gridList}
         >
-          {
-            tilesData.map(tile => (
-              <a
-                target="_blank"
-                href={tile.href}
-                rel="noopener noreferrer"
-              >
-                <GridTile
-                  title={tile.title}
-                  titleStyle={{
-                    fontFamily: 'Roboto Slab',
-                    letterSpacing: '1px',
-                    fontSize: '17px',
-                    fontWeight: 800,
-                  }}
-                  subtitle={<span className="project-info"><b>ROLE: </b>{tile.role}</span>}
-                  tileStyle={styles.tileStyle}
+          <div
+            className="grid-tile-container"
+          >
+            {
+              tilesData.map(tile => (
+                <div
+                  key={tile.title}
+                  className="col-sm-6 col-md-4 col-lg-3"
+                  style={{ padding: '5px' }}
                 >
-                  <img
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title={`Check out ${tile.title} by clicking here`}
-                    className="img-style"
-                    alt={tile.alt}
-                    src={tile.img}
-                  />
-                </GridTile>
-              </a>
-            ))
-          }
+                  <a
+                    target="_blank"
+                    href={tile.href}
+                    rel="noopener noreferrer"
+                  >
+                    <GridTile
+                      title={tile.title}
+                      titleStyle={{
+                        fontFamily: 'Roboto Slab',
+                        letterSpacing: '1px',
+                        fontSize: '17px',
+                        fontWeight: 800,
+                      }}
+                      cols={1}
+                      style={{ height: 'auto', minHeight: '100%' }}
+                      subtitle={<span className="project-info"><b>ROLE: </b>{tile.role}</span>}
+                      tileStyle={styles.tileStyle}
+                    >
+                      <IconButton
+                        tooltip={`Check out ${tile.title}`}
+                        tooltipPosition="bottom-right"
+                        tooltipStyles={{
+                          fontFamily: 'Roboto Slab',
+                          letterSpacing: '1px',
+                          fontWeight: 800,
+                          top: '40%',
+                          left: '20%',
+                        }}
+                        touch
+                        iconClassName=""
+                        style={{ padding: 0, height: '100%', width: '100%' }}
+                      >
+                        <img
+                          className="img-style"
+                          alt={tile.alt}
+                          src={tile.img}
+                        />
+                      </IconButton>
+                    </GridTile>
+                  </a>
+                </div>
+              ))
+            }
+          </div>
         </GridList>
       </div>
     );

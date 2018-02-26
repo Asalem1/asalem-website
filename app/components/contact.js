@@ -6,12 +6,14 @@ const labelStyle = {
   top: '7px',
   fontFamily: 'Roboto Slab',
   fontWeight: 800,
+  fontSize: '20px',
 };
 
 const inputStyle = {
   fontFamily: 'Roboto Slab',
   fontWeight: 800,
   bottom: '30px',
+  fontSize: '20px',
 };
 
 export default class Contact extends Component {
@@ -123,13 +125,19 @@ export default class Contact extends Component {
           <RaisedButton
             label="Send Message"
             type="Submit"
+            fullWidth
             primary
             labelStyle={{
               fontFamily: 'Roboto Slab',
               fontWeight: 800,
               letterSpacing: '1.5px',
+              fontSize: '20px',
+              lineHeight: '65px',
             }}
-            style={{ marginBottom: '40px' }}
+            style={{
+              height: '65px',
+              marginBottom: '40px',
+            }}
           />
         </form>
       </div>

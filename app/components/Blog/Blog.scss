@@ -8,15 +8,27 @@
   background-repeat: no-repeat;
   color: #fff;
   position: relative;
+
+  @media(max-width: 991px) {
+    height: 775px;
+  }
+}
+
+header {
+  position: relative;
+  top: 30%;
 }
 
 .blog-header {
   font-size: 60px;
   letter-spacing: 1px;
-  position: relative;
-  margin-top: 10%;
   display: inline-block;
   font-family: 'Roboto Slab', sans-serif;
+
+
+  @media(max-width: 991px) {
+    font-size: 75px;
+  }
 }
 
 .blog-description {
@@ -27,10 +39,22 @@
   position: relative;
   top: 40%;
   font-family: 'Pacifico', cursive;
+
+  @media(max-width: 991px) {
+    font-size: 35px;
+  }
 }
 
 .blog-list {
 	column-count: 3;
+
+  @media(max-width: 991px) and (min-width: 768px) {
+    column-count: 2;
+  }
+
+  @media(max-width: 767px) {
+    column-count: 1;
+  }
 }
 
 .blog-list-item {
@@ -64,9 +88,17 @@
   font-weight: 800;
   font-size: 18px;
   margin: 10px;
+
+  @media(max-width: 991px) {
+    font-size: 30px;
+  }
 }
 
 .blog-summary {
 	margin: 10px;
 	font-family: 'Roboto Slab', sans-serif;
+
+  @media(max-width: 991px) {
+    font-size: 30px;
+  }
 }
